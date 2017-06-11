@@ -7,5 +7,9 @@ function [ paleta ] = sortpalette( paleta )
 %   IESIRE:  paleta = paleta de culori sortata
 %
 
+    [unused, pcaResult, unused] = pca(paleta, 'NumComponents', 1);
+    [unused, pcaSort] = sort(pcaResult);
+    paleta = paleta(pcaSort, :);
+
 end
 
