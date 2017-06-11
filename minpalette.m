@@ -8,5 +8,15 @@ function [ i ] = minpalette( culoare, paleta )
 %   IESIRE:        i = culoarea din paleta cea mai apropiata (index)
 %
 
+% Calculam distantele patratice euclidiene (SED-urile).
+N = size(paleta, 1);
+seds = zeros(N, 1);
+for i = 1 : N
+    seds(i) = sed(culoare, paleta(i,:));
+end
+
+% Intoarcem index-ul corespondent distantei minime.
+[~, i] = min(seds);
+
 end
 

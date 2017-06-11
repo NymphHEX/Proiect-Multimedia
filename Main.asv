@@ -20,6 +20,14 @@ harta = genmap(w, h, W, H);
 paleta = sortpalette(paleta);
 
 %% Inserarea watermark-ului in imagine.
+% Conversie imagine.
+imagine = uint8(imagine);
+
+% Debug.
+imshow(imagine);
+pause
+
+% Imbinarea watermark-ului.
 debug = [0 0 0 0];
 for i = 1 : w
     for j = 1 : h
